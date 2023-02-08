@@ -1,0 +1,151 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+body {
+    background: #0f0d13;
+}
+
+#app {
+    display: grid;
+    grid-template-column: max-content;
+    grid-template-areas: 
+    "A B"
+    "A C";
+    height: 100vh;
+    width: 100vw;
+    place-content: center;
+    gap: 32px;
+}
+
+#player-1 {
+   grid-area: A; 
+   padding: 50px 38px;
+}
+
+#player-1 .wrapper {
+    width: 190px;
+    height: fit-content;
+}
+
+#player-1 img {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+#player-1 .info {
+    margin-top: 28px;
+}
+
+#player-2 {
+    grid-area: B; 
+}
+
+#player-3 {
+    grid-area: C; 
+}
+
+.player {
+    background: #2A2141;
+    padding: 28px;
+    border-radius: 10px;
+}
+
+.player img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.info {
+    color: #e1e1e6;
+} 
+
+.info h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.info p {
+    opacity: .67;
+} 
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.horizontal {
+    padding-inline: 58px;
+}
+
+.track {
+    margin-top: 28px;
+    position: relative;
+}
+
+.track::before {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 6px;
+    width: 100%;
+    background: #d9d9d9;
+    opacity: .3;
+    border-radius: 10px;
+}
+
+
+.track::after {
+    
+    content: '';
+    display: block;
+    height: 6px;
+    width: 80%;
+    background: #d9d9d9;
+    border-radius: 10px;
+}
+
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9px;
+    font-size: 14px;
+    color: #c4c4cc;
+    opacity: .7;
+}
+
+@media (max-width: 700px) {
+    #app {
+        display: flex;
+        flex-direction: column;
+
+        max-width: 270px;
+        margin: auto;
+    }
+
+    body {
+        padding-block: 60px;
+    }
+}
+
+
+
